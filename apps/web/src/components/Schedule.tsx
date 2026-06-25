@@ -17,11 +17,7 @@ const Schedule = () => {
   return (
     <div className="w-fit">
       {Object.values(profiles.value).map((profile) => (
-        <ScheduleRow
-          key={profile.id}
-          profile={profile}
-          profilePreferences={preferences.value[profile.id]}
-        />
+        <ScheduleRow key={profile.id} profile={profile} />
       ))}
     </div>
   );

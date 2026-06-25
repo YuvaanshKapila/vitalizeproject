@@ -7,6 +7,7 @@ export interface Shift {
   id: string;
   profileId: string;
   date: string;
+  recurrenceId: string | null;
 }
 
 export type ShiftWithProfile = Shift & {

@@ -1,0 +1,2 @@
+ALTER TABLE "shift_assignment" ADD COLUMN "recurrence_id" uuid;--> statement-breakpoint
+ALTER TABLE "shift_assignment" ADD CONSTRAINT "shift_assignment_recurrence_id_shift_assignment_id_fkey" FOREIGN KEY ("recurrence_id") REFERENCES "shift_assignment"("id") ON DELETE SET NULL;

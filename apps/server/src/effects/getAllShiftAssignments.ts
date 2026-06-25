@@ -13,6 +13,7 @@ export const getAllShiftAssignments = Effect.fn("getAllShiftAssignments")(
         id: shiftAssignment.id,
         profileId: shiftAssignment.profileId,
         date: sql<string>`${shiftAssignment.date}::text`,
+        recurrenceId: shiftAssignment.recurrenceId,
       })
       .from(shiftAssignment);
 

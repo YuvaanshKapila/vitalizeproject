@@ -36,6 +36,12 @@ export const preferencesAtom = ScheduleClient.query(
   },
 );
 
+export const toggleShiftAtom = ScheduleClient.mutation("toggleShiftAssignment");
+export const promoteToWeeklyAtom = ScheduleClient.mutation("promoteToWeekly");
+export const deleteRecurrenceAtom = ScheduleClient.mutation("deleteRecurrence");
+export const repatternFollowingAtom =
+  ScheduleClient.mutation("repatternFollowing");
+
 export const assignmentsAtom = Atom.make<
   Record<string, Record<string, ShiftWithProfile>>
 >({});

@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import {
+  type AnyPgColumn,
   date,
   pgTable,
   text,
@@ -31,6 +32,9 @@ export const shiftAssignment = pgTable(
       .references(() => profile.id, { onDelete: "cascade" })
       .notNull(),
     date: date().notNull(),
+    recurrenceId: uuid().references((): AnyPgColumn => shiftAssignment.id, {
+      onDelete: "set null",
+    }),
     ...timestamps,
   },
   (t) => [unique().on(t.profileId, t.date)],
